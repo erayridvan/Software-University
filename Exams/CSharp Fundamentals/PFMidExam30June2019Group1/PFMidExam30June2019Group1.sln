@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator", "DistanceCalculator\DistanceCalculator.csproj", "{323C20CE-E561-4647-9870-0AEE25FF2DC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberArray", "NumberArray\NumberArray.csproj", "{8EDF75F0-5FB0-4A2D-A1A9-0D1999159914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList", "ContactList\ContactList.csproj", "{3243DACB-D139-4219-8E8B-DE9823F2261D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{323C20CE-E561-4647-9870-0AEE25FF2DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323C20CE-E561-4647-9870-0AEE25FF2DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323C20CE-E561-4647-9870-0AEE25FF2DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323C20CE-E561-4647-9870-0AEE25FF2DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF75F0-5FB0-4A2D-A1A9-0D1999159914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF75F0-5FB0-4A2D-A1A9-0D1999159914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF75F0-5FB0-4A2D-A1A9-0D1999159914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF75F0-5FB0-4A2D-A1A9-0D1999159914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3243DACB-D139-4219-8E8B-DE9823F2261D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3243DACB-D139-4219-8E8B-DE9823F2261D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3243DACB-D139-4219-8E8B-DE9823F2261D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3243DACB-D139-4219-8E8B-DE9823F2261D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6DAF53A-FC5E-48F8-867A-9712D5BDE4A2}
+	EndGlobalSection
+EndGlobal
