@@ -6,7 +6,7 @@ namespace LunchBreak
     {
         static void Main()
         {
-            string nameOfSerial = Console.ReadLine();
+            string serialName = Console.ReadLine();
             double serialLenght = double.Parse(Console.ReadLine());
             double restLenght = double.Parse(Console.ReadLine());
 
@@ -18,11 +18,11 @@ namespace LunchBreak
 
             if (timeNeeded>=serialLenght)
             {
-                Console.WriteLine($"You have enough time to watch {nameOfSerial} and left with {Math.Ceiling(timeLeft)} minutes free time.");
+                Console.WriteLine($"You have enough time to watch {serialName} and left with {Math.Ceiling(timeLeft)} minutes free time.");
             }
             else
             {
-                Console.WriteLine($"You don't have enough time to watch {nameOfSerial}, you need {Math.Ceiling(timeLeft)} more minutes.");
+                Console.WriteLine($"You don't have enough time to watch {serialName}, you need {Math.Ceiling(timeLeft)} more minutes.");
             }
         }
     }

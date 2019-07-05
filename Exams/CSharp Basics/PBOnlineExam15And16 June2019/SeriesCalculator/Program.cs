@@ -6,7 +6,7 @@ namespace SeriesCalculator
     {
         static void Main()
         {
-            string nameOfSeries = Console.ReadLine();
+            string seriesName = Console.ReadLine();
             int numberOfSeasons = int.Parse(Console.ReadLine());
             int numberOfEpisodes = int.Parse(Console.ReadLine());
             double timeForOneEpisode = double.Parse(Console.ReadLine());
@@ -16,7 +16,7 @@ namespace SeriesCalculator
             int specialEpisodeTime = numberOfSeasons * 10;
             double totalMinutesToWatch = totalTimeForOneEpisode * numberOfEpisodes * numberOfSeasons + specialEpisodeTime;
 
-            Console.WriteLine($"Total time needed to watch the {nameOfSeries} series is {totalMinutesToWatch} minutes.");
+            Console.WriteLine($"Total time needed to watch the {seriesName} series is {totalMinutesToWatch} minutes.");
         }
     }
 }

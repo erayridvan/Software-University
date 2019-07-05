@@ -6,7 +6,7 @@ namespace MovieProfit
     {
         static void Main()
         {
-            string movieName = Console.ReadLine();
+            string nameOfMovie = Console.ReadLine();
             int numberOfDays = int.Parse(Console.ReadLine());
             int numberOfTickets = int.Parse(Console.ReadLine());
             double ticketPrice = double.Parse(Console.ReadLine());
@@ -17,7 +17,7 @@ namespace MovieProfit
             double incomeForSaloon = totalPrice * (procentForSaloon/100);
             double incomeFromMovie = totalPrice - incomeForSaloon;
 
-            Console.WriteLine($"The profit from the movie {movieName} is {incomeFromMovie:f2} lv.");
+            Console.WriteLine($"The profit from the movie {nameOfMovie} is {incomeFromMovie:f2} lv.");
         }
     }
 }
