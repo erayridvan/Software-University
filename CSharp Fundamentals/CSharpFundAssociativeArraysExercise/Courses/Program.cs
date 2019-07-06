@@ -13,7 +13,7 @@ namespace Courses
             while (true)
             {
                 string[] info = Console.ReadLine()
-                    .Split(":")
+                    .Split(":", StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
 
                 if (info[0]=="end")
@@ -31,6 +31,18 @@ namespace Courses
                 else
                 {
                     infoCoursesStudents[courseName].Add(studentName);
+                }
+            }
+
+            
+            foreach (var item in infoCoursesStudents.OrderByDescending(x=>x.Value.Count))
+            {
+                string currentCourse = item.Key;
+                Console.WriteLine($"{currentCourse.Trim()}: {infoCoursesStudents[item.Key].Count}");
+                foreach (var name in item.Value.OrderBy(n=>n))
+                {
+                    Console.Write($"--{name}");
+                    Console.WriteLine();
                 }
             }
         }
