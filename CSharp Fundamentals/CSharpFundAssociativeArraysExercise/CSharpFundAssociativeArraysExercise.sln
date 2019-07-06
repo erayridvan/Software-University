@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LegendaryFarming", "Legenda
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders", "Orders\Orders.csproj", "{EFADEBC5-16D6-4EDC-9811-D9A120C6236B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniParking", "SoftUniParking\SoftUniParking.csproj", "{81BA9D23-0FA3-408C-8B76-D66133992969}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniParking", "SoftUniParking\SoftUniParking.csproj", "{81BA9D23-0FA3-408C-8B76-D66133992969}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses", "Courses\Courses.csproj", "{C65DA95C-A2C8-4A95-B526-E79EA7961B7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Courses", "Courses\Courses.csproj", "{C65DA95C-A2C8-4A95-B526-E79EA7961B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAcademy", "StudentAcademy\StudentAcademy.csproj", "{783E5F44-330F-41FC-B76D-A5D9BB4F26C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C65DA95C-A2C8-4A95-B526-E79EA7961B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C65DA95C-A2C8-4A95-B526-E79EA7961B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C65DA95C-A2C8-4A95-B526-E79EA7961B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783E5F44-330F-41FC-B76D-A5D9BB4F26C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783E5F44-330F-41FC-B76D-A5D9BB4F26C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783E5F44-330F-41FC-B76D-A5D9BB4F26C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783E5F44-330F-41FC-B76D-A5D9BB4F26C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
