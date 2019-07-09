@@ -7,10 +7,14 @@ namespace PasswordValidator
         static void Main()
         {
             string password = Console.ReadLine();
-            LenghtChecker(password);
-            LetterAndDigitCheker(password);
-            NumberCheck(password);
+            bool lenghtCheck = LenghtChecker(password);
+            bool letAndDigitCheck = LetterAndDigitCheker(password);
+            bool numCheck = NumberCheck(password);
 
+            if (lenghtCheck==true && letAndDigitCheck==true & numCheck==true)
+            {
+                Console.WriteLine("Password is valid");
+            }
         }
 
         static bool LenghtChecker(string password)
@@ -28,7 +32,7 @@ namespace PasswordValidator
 
         static bool LetterAndDigitCheker(string password)
         {
-            bool check = false;
+            bool check = true;
 
             for (int i = 0; i < password.Length; i++)
             {
@@ -38,17 +42,19 @@ namespace PasswordValidator
                    && !(currentChar >= 65 && currentChar <= 90)
                     && !(currentChar >= 97 && currentChar <= 122))
                 {
-                    Console.WriteLine("Password must consist only of letters and digits");
                     check = false;
-                    return false;
                     break;
                 }
-                check = true;
             }
 
-            if (check=true)
+            if (check == true)
             {
                 return true;
+            }
+            else
+            {
+                Console.WriteLine("Password must consist only of letters and digits");
+                return false;
             }
         }
 
