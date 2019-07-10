@@ -38,6 +38,7 @@ namespace TopNumber
                             Console.WriteLine(i);
                             break;
                         }
+                        currNumber /= 10;
                     }
                 }
             }
