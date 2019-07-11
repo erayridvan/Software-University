@@ -1,233 +1,275 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace ArrayManipulator
+namespace _11.Array_Manipulator
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int[] numbers = Console.ReadLine()
-                .Split(" ")
-                .Select(int.Parse)
-                .ToArray();
-
-            string text = Console.ReadLine();
-
-            while (text != "end")
+            int[] arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            string[] comand = Console.ReadLine().Split();
+            while ((comand[0]) != "end")
             {
-                string[] info = text.Split(" ");
-                string command = info[0];
 
-                if (command == "exchange")
+                if (comand[0] == "exchange")
                 {
-                    int index = int.Parse(info[1]);
-
-                    if (index > numbers.Length)
+                    int action = int.Parse(comand[1]);
+                    if (action >= arr.Length || action < 0)
                     {
                         Console.WriteLine("Invalid index");
-                    }
-                    else
-                    {
-                        ExchangeArray(index, numbers);
-                    }
-                }
-                else if (command == "max" || command == "min")
-                {
-                    string type = info[1];
-                    MaxAndMinIndexFinder(numbers, type, command);
-                }
-                else if (command == "first" || command == "last")
-                {
-                    int count = int.Parse(info[1]);
-                    string type = info[2];
+                        comand = Console.ReadLine().Split();
 
-                    if (count >= numbers.Length)
+                        continue;
+                    }
+                    arr = MakeArrExchange(arr, action);
+                }
+                else if (comand[0] == "max")
+                {
+                    if (comand[1] == "even")
+                    {
+                        PrintMaxIndex(arr, comand[1]);
+                    }
+                    else if (comand[1] == "odd")
+                    {
+                        PrintMaxIndex(arr, comand[1]);
+                    }
+                }
+                else if (comand[0] == "min")
+                {
+                    if (comand[1] == "even")
+                    {
+                        PrintMinIndex(arr, comand[1]);
+                    }
+                    else if (comand[1] == "odd")
+                    {
+                        PrintMinIndex(arr, comand[1]);
+                    }
+                }
+                else if (comand[0] == "first")
+                {
+                    int count = int.Parse(comand[1]);
+                    if (count > arr.Length || count < 0)
                     {
                         Console.WriteLine("Invalid count");
+                        comand = Console.ReadLine().Split();
+                        continue;
+                    }
+                    if (comand[2] == "even")
+                    {
+                        PrintFirstElements(arr, comand[2], comand[1]);
                     }
                     else
                     {
-                        FirstOrLastCount(numbers, type, count, command);
+                        PrintFirstElements(arr, comand[2], comand[1]);
                     }
                 }
+                else if (comand[0] == "last")
+                {
+                    int count = int.Parse(comand[1]);
+                    if (count > arr.Length || count < 0)
+                    {
+                        Console.WriteLine("Invalid count");
+                        comand = Console.ReadLine().Split();
+                        continue;
+                    }
+                    if (comand[2] == "even")
+                    {
+                        PrintLastElements(arr, comand[2], comand[1]);
+                    }
+                    else
+                    {
+                        PrintLastElements(arr, comand[2], comand[1]);
+                    }
+                }
+                comand = Console.ReadLine().Split();
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+        }
 
-                text = Console.ReadLine();
-
+        private static void PrintLastElements(int[] arr, string comand, string count)
+        {
+            List<int> currentList = new List<int>();
+            int currentCount = int.Parse(count);
+            if (comand == "even")
+            {
+                for (int i = arr.Length - 1; i >= 0; i--)
+                {
+                    if (arr[i] % 2 == 0)
+                    {
+                        currentList.Add(arr[i]);
+                        currentCount--;
+                        if (currentCount < 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                currentList.Reverse();
+                Console.WriteLine("[{0}]", string.Join(", ", currentList));
+            }
+            else
+            {
+                for (int i = arr.Length - 1; i >= 0; i--)
+                {
+                    if (arr[i] % 2 != 0)
+                    {
+                        currentList.Add(arr[i]);
+                        currentCount--;
+                        if (currentCount < 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                currentList.Reverse();
+                Console.WriteLine("[{0}]", string.Join(", ", currentList));
             }
         }
 
-        static void ExchangeArray(int index, int[] numbers)
+        private static void PrintFirstElements(int[] arr, string comand, string count)
         {
-            int[] resultArr = numbers;
-            for (int i = 0; i < index+1; i++)
+            List<int> currentList = new List<int>();
+            int currentCount = int.Parse(count);
+            if (comand == "even")
             {
-                int firstNum = numbers[0];
-                for (int k = 0; k < numbers.Length - 1; k++)
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    resultArr[k] = numbers[k + 1];
+                    if (arr[i] % 2 == 0)
+                    {
+                        currentList.Add(arr[i]);
+                        currentCount--;
+                        if (currentCount < 1)
+                        {
+                            break;
+                        }
+                    }
                 }
-                resultArr[resultArr.Length - 1] = firstNum;
-                numbers = resultArr;
+                Console.WriteLine("[{0}]", string.Join(", ", currentList));
+            }
+            else
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] % 2 != 0)
+                    {
+                        currentList.Add(arr[i]);
+                        currentCount--;
+                        if (currentCount < 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                Console.WriteLine("[{0}]", string.Join(", ", currentList));
             }
         }
 
-        static void MaxAndMinIndexFinder(int[] numbers, string type, string command)
+
+
+        private static void PrintMinIndex(int[] arr, string comand)
         {
-            int maxOdd = int.MinValue;
-            int minOdd = int.MaxValue;
-            int maxEven = int.MinValue;
-            int minEven = int.MaxValue;
-
-            for (int i = 0; i < numbers.Length; i++)
+            int index = -1;
+            int min = int.MaxValue;
+            if (comand == "even")
             {
-                int currentNum = numbers[i];
-
-                if (currentNum % 2 == 0)
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    if (currentNum < minEven)
+                    if (arr[i] % 2 == 0)
                     {
-                        minEven = currentNum;
-                    }
-                    else if (currentNum > maxEven)
-                    {
-                        maxEven = currentNum;
-                    }
-                }
-                else if (currentNum % 2 != 0)
-                {
-                    if (currentNum < minOdd)
-                    {
-                        minOdd = currentNum;
-                    }
-                    else if (currentNum > maxOdd)
-                    {
-                        maxOdd = currentNum;
+                        if (min >= arr[i])
+                        {
+                            min = arr[i];
+                            index = i;
+                        }
                     }
                 }
             }
-
-            int index = 0;
-            if (type == "even")
+            else
             {
-                if (command == "min")
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    if (minEven == int.MaxValue)
+                    if (arr[i] % 2 != 0)
                     {
-                        Console.WriteLine("No matches");
-                    }
-                    else
-                    {
-                        index = Array.IndexOf(numbers, minEven);
-                        Console.WriteLine(index);
-                    }
-                }
-                else if (command == "max")
-                {
-                    if (maxEven <= 0)
-                    {
-                        Console.WriteLine("No matches");
-                    }
-                    else
-                    {
-                        index = Array.IndexOf(numbers, maxEven);
-                        Console.WriteLine(index);
+                        if (min >= arr[i])
+                        {
+                            min = arr[i];
+                            index = i;
+                        }
                     }
                 }
             }
-            else if (type == "odd")
+            if (index >= 0)
             {
-                if (command == "min")
-                {
-                    if (minOdd == int.MaxValue)
-                    {
-                        Console.WriteLine("No matches");
-                    }
-                    else
-                    {
-                        index = Array.IndexOf(numbers, minOdd);
-                        Console.WriteLine(index);
-                    }
-                }
-                else if (command == "max")
-                {
-                    if (minOdd <= 0)
-                    {
-                        Console.WriteLine("No matches");
-                    }
-                    else
-                    {
-                        index = Array.IndexOf(numbers, maxOdd);
-                        Console.WriteLine(index);
-                    }
-                }
+                Console.WriteLine(index);
+            }
+            else
+            {
+                Console.WriteLine("No matches");
             }
         }
 
-        static void FirstOrLastCount(int[] numbers, string type, int count, string command)
+        private static void PrintMaxIndex(int[] arr, string comand)
         {
-            int[] resultArr = new int[count-1];
-
-            if (command=="first")
+            int index = -1;
+            int max = int.MinValue;
+            if (comand == "even")
             {
-                if (type == "even")
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    for (int i = 0; i < numbers.Length; i++)
+                    if (arr[i] % 2 == 0)
                     {
-                        int currentNum = numbers[i];
-
-                        if (currentNum % 2 == 0)
+                        if (max <= arr[i])
                         {
-                            resultArr[i] = currentNum;
-                        }
-                    }
-                }
-                else if (type == "odd")
-                {
-                    for (int i = 0; i < numbers.Length; i++)
-                    {
-                        int currentNum = numbers[i];
-
-                        if (currentNum % 2 != 0)
-                        {
-                            resultArr[i] = currentNum;
+                            max = arr[i];
+                            index = i;
                         }
                     }
                 }
             }
-            else if (command=="last")
+            else
             {
-                if (type=="even")
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    for (int i = numbers.Length - 1; i >= 0; i--)
+                    if (arr[i] % 2 != 0)
                     {
-                        int currentNum = numbers[i];
-
-                        if (currentNum % 2 == 0)
+                        if (max <= arr[i])
                         {
-                            resultArr[i] = currentNum;
-                        }
-                    }
-                }
-                else if (type=="odd")
-                {
-                    for (int i = numbers.Length - 1; i >= 0; i--)
-                    {
-                        int currentNum = numbers[i];
-
-                        if (currentNum % 2 != 0)
-                        {
-                            resultArr[i] = currentNum;
+                            max = arr[i];
+                            index = i;
                         }
                     }
                 }
             }
 
-            for (int i = 0; i < count; i++)
+            if (index >= 0)
             {
-                Console.Write("[{0}] ",numbers[i]);
+                Console.WriteLine(index);
             }
+            else
+            {
+                Console.WriteLine("No matches");
+            }
+        }
+
+        private static int[] MakeArrExchange(int[] arr, int action)
+        {
+            int currentNum = 0;
+            for (int i = 0; i < arr.Length - 1 - action; i++)
+            {
+                currentNum = arr[arr.Length - 1];
+                for (int j = arr.Length - 1; j >= 1; j--)
+                {
+
+                    arr[j] = arr[j - 1];
+
+                }
+                arr[0] = currentNum;
+            }
+
+            return arr;
         }
     }
 }
