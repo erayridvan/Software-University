@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftboxCoverage", "GiftboxC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksPlanner", "TasksPlanner\TasksPlanner.csproj", "{3F66CF3F-CC26-4F49-B1BD-418B446B3E3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FroggySquad", "FroggySquad\FroggySquad.csproj", "{2CCDC403-0C0F-41FB-84AE-FAC4105C8FF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3F66CF3F-CC26-4F49-B1BD-418B446B3E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F66CF3F-CC26-4F49-B1BD-418B446B3E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F66CF3F-CC26-4F49-B1BD-418B446B3E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCDC403-0C0F-41FB-84AE-FAC4105C8FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCDC403-0C0F-41FB-84AE-FAC4105C8FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCDC403-0C0F-41FB-84AE-FAC4105C8FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCDC403-0C0F-41FB-84AE-FAC4105C8FF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
