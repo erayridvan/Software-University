@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaesarCipher", "CaesarCiphe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplyBigNumber", "MultiplyBigNumber\MultiplyBigNumber.csproj", "{ECABD605-94C1-4776-8CE1-A23BFAEC7255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceRepeatingChars", "ReplaceRepeatingChars\ReplaceRepeatingChars.csproj", "{F69D088C-6818-46C9-8083-A87E4CDC36C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReplaceRepeatingChars", "ReplaceRepeatingChars\ReplaceRepeatingChars.csproj", "{F69D088C-6818-46C9-8083-A87E4CDC36C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringExplosion", "StringExplosion\StringExplosion.csproj", "{243A977B-01A2-4806-B507-12FF97B5AAC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LettersChangeNumbers", "LettersChangeNumbers\LettersChangeNumbers.csproj", "{C05E010A-E6B0-44FA-B21A-397174FB128A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{243A977B-01A2-4806-B507-12FF97B5AAC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243A977B-01A2-4806-B507-12FF97B5AAC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243A977B-01A2-4806-B507-12FF97B5AAC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243A977B-01A2-4806-B507-12FF97B5AAC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05E010A-E6B0-44FA-B21A-397174FB128A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05E010A-E6B0-44FA-B21A-397174FB128A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05E010A-E6B0-44FA-B21A-397174FB128A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05E010A-E6B0-44FA-B21A-397174FB128A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
