@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidUsernames", "ValidUsernames\ValidUsernames.csproj", "{291601BC-CA6E-420E-9E4C-6250E91095B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterMultiplier", "CharacterMultiplier\CharacterMultiplier.csproj", "{A206C02C-9A14-4CE1-9769-C0DFA24F6881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterMultiplier", "CharacterMultiplier\CharacterMultiplier.csproj", "{A206C02C-9A14-4CE1-9769-C0DFA24F6881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractFile", "ExtractFile\ExtractFile.csproj", "{9FAF64A1-4214-4A75-9BCF-F585DA6794A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractFile", "ExtractFile\ExtractFile.csproj", "{9FAF64A1-4214-4A75-9BCF-F585DA6794A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaesarCipher", "CaesarCipher\CaesarCipher.csproj", "{2930171E-E585-49E7-B4E1-6D21A33847C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaesarCipher", "CaesarCipher\CaesarCipher.csproj", "{2930171E-E585-49E7-B4E1-6D21A33847C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplyBigNumber", "MultiplyBigNumber\MultiplyBigNumber.csproj", "{ECABD605-94C1-4776-8CE1-A23BFAEC7255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplyBigNumber", "MultiplyBigNumber\MultiplyBigNumber.csproj", "{ECABD605-94C1-4776-8CE1-A23BFAEC7255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceRepeatingChars", "ReplaceRepeatingChars\ReplaceRepeatingChars.csproj", "{F69D088C-6818-46C9-8083-A87E4CDC36C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{ECABD605-94C1-4776-8CE1-A23BFAEC7255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECABD605-94C1-4776-8CE1-A23BFAEC7255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECABD605-94C1-4776-8CE1-A23BFAEC7255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69D088C-6818-46C9-8083-A87E4CDC36C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
