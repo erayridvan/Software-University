@@ -7,29 +7,26 @@ namespace ExtractPersonInformation
 {
     class Program
     {
-        static void Main()
+        public static void Main()
         {
-            public class Program
-        {
-            public static void Main()
+            int n = int.Parse(Console.ReadLine());
+
+
+            Regex namePattern = new Regex(@"@(?<name>[\S\s]*?)\|");
+            Regex agePattern = new Regex(@"#(?<age>[\S\s]*?)\*");
+
+            for (int i = 0; i < n; i++)
             {
-                int n = int.Parse(Console.ReadLine());
+                string input = Console.ReadLine();
 
-
-                Regex namePattern = new Regex(@"@(?<name>[\S\s]*?)\|");
-                Regex agePattern = new Regex(@"#(?<age>[\S\s]*?)\*");
-
-                for (int i = 0; i < n; i++)
+                if (namePattern.IsMatch(input) && agePattern.IsMatch(input))
                 {
-                    string input = Console.ReadLine();
-
-                    if (namePattern.IsMatch(input) && agePattern.IsMatch(input))
-                    {
-                        Console.WriteLine($"{namePattern.Match(input).Groups["name"].ToString()} is {agePattern.Match(input).Groups["age"].ToString()} years old.");
-                    }
+                    Console.WriteLine($"{namePattern.Match(input).Groups["name"].ToString()} is {agePattern.Match(input).Groups["age"].ToString()} years old.");
                 }
-
             }
+
         }
+
     }
 }
+
