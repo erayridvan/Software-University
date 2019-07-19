@@ -6,7 +6,7 @@ namespace TreasureFinder
     {
         static void Main()
         {
-
+            Console.WriteLine();
         }
     }
 }
