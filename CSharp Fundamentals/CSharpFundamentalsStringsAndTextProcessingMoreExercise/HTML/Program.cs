@@ -8,7 +8,6 @@ namespace HTML
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine();
         }
     }
 }
