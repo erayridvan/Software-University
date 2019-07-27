@@ -7,7 +7,6 @@ namespace HTML
         static void Main()
         {
             Console.WriteLine();
-            Console.WriteLine();
         }
     }
 }
