@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace MatchFullName
@@ -18,7 +16,7 @@ namespace MatchFullName
 
             foreach (Match name in matchedNames)
             {
-                Console.WriteLine(name.Value+" ");
+                Console.Write(name.Value+" ");
             }
         }
     }
