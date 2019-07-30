@@ -10,15 +10,15 @@ namespace MatchFullName
         static void Main()
         {
 
-            var pattern = new Regex("\b[A-Z][a-z]+ [A-Z][a-z]+\b");
+            var pattern = @"\b[A-Z][a-z]+ [A-Z][a-z]+\b";
 
             string names = Console.ReadLine();
 
-            MatchCollection matchedNames = pattern.Matches(names);
+            MatchCollection matchedNames = Regex.Matches(names, pattern);
 
             foreach (Match name in matchedNames)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(name.Value+" ");
             }
         }
     }
