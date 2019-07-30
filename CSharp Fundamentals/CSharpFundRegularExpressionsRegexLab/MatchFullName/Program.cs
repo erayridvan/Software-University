@@ -9,11 +9,12 @@ namespace MatchFullName
     {
         static void Main()
         {
-            var pattern = new Regex("[A - Z][a - z] + [A - Z][a - z] +");
+
+            var pattern = new Regex("\b[A-Z][a-z]+ [A-Z][a-z]+\b");
 
             string names = Console.ReadLine();
 
-            var matchedNames = pattern.Matches(names);
+            MatchCollection matchedNames = pattern.Matches(names);
 
             foreach (Match name in matchedNames)
             {
