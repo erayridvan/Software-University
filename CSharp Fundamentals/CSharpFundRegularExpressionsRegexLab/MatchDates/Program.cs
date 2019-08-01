@@ -12,6 +12,8 @@ namespace MatchDates
             var dates = Console.ReadLine();
 
             MatchCollection matchedDates = Regex.Matches(dates, regex);
+
+            Console.WriteLine();    
         }
     }
 }
