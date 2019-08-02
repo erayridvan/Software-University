@@ -7,13 +7,16 @@ namespace MatchDates
     {
         static void Main()
         {
-            var regex = @"[0-9]{2}(\.|-|\/)[A-z][a-z]{2}\1[0-9]{4}";
+            string regex = @"\b(?<day>\d{2})([\/| -|\.])(?<month>[A-Z][a-z]{2})\1(?<year>\d{4})\b";
 
-            var dates = Console.ReadLine();
+            string dates = Console.ReadLine();
 
             MatchCollection matchedDates = Regex.Matches(dates, regex);
 
-            Console.WriteLine();    
+            foreach (Match matches in matchedDates)
+            {
+                Console.WriteLine("Day: {0}, Month: {1}, Year: {2}",matches.Groups[2].Value,matches.Groups[3].Value,matches.Groups[4].Value);
+            }
         }
     }
 }
