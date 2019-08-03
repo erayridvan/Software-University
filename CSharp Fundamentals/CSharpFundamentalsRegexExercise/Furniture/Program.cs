@@ -24,6 +24,8 @@ namespace Furniture
                     
                 }
             }
+
+            Console.WriteLine();    
         }
     }
 }
