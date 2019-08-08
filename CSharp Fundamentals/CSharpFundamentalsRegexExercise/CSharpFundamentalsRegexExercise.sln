@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furniture", "Furniture\Furniture.csproj", "{CBD64A36-7557-4F2E-926D-ACC366AF9883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furniture", "Furniture\Furniture.csproj", "{CBD64A36-7557-4F2E-926D-ACC366AF9883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Race", "Race\Race.csproj", "{40006579-C10E-4696-AD45-E6155C7E5DAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CBD64A36-7557-4F2E-926D-ACC366AF9883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBD64A36-7557-4F2E-926D-ACC366AF9883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBD64A36-7557-4F2E-926D-ACC366AF9883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40006579-C10E-4696-AD45-E6155C7E5DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40006579-C10E-4696-AD45-E6155C7E5DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40006579-C10E-4696-AD45-E6155C7E5DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40006579-C10E-4696-AD45-E6155C7E5DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
