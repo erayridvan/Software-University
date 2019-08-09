@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Race
+namespace SoftUniBarIncome
 {
     class Program
     {
