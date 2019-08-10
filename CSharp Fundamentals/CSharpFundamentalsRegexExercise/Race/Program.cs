@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Race
 {
@@ -7,7 +9,43 @@ namespace Race
     {
         static void Main()
         {
+            Dictionary<string, int> racersAndDistance = new Dictionary<string, int>();
 
+            List<string> participant = Console.ReadLine().Split(",").ToList();
+            string info = string.Empty;
+
+            while ((info = Console.ReadLine()) != "end of race")
+            {
+                string name = string.Empty;
+                int distance = 0;
+
+                for (int i = 0; i < info.Length; i++)
+                {
+                    char currentSymbol = info[i];
+
+                    if (char.IsDigit(currentSymbol))
+                    {
+                        distance += int.Parse(currentSymbol.ToString());
+                    }
+                    else if (char.IsLetter(currentSymbol))
+                    {
+                        name += currentSymbol;
+                    }
+                }
+
+                if (participant.Contains(name))
+                {
+                    racersAndDistance[name] = distance;
+                }
+
+                name = string.Empty;
+                distance = 0;
+            }
+
+            foreach (var racer in racersAndDistance.OrderByDescending(n=>n.Value))
+            {
+                Console.WriteLine($"1st place: {racer.Key}");
+            }
         }
     }
 }
