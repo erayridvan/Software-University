@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackFlag", "BlackFlag\BlackFlag.csproj", "{0864C11B-5D88-48AE-823D-08E90EA855E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreasureHunt", "TreasureHunt\TreasureHunt.csproj", "{F9552136-8D1C-46AF-BB4B-866B11A292F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManOWar", "ManOWar\ManOWar.csproj", "{06297484-B9B4-4455-9892-2431DC1A2D75}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0864C11B-5D88-48AE-823D-08E90EA855E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0864C11B-5D88-48AE-823D-08E90EA855E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0864C11B-5D88-48AE-823D-08E90EA855E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0864C11B-5D88-48AE-823D-08E90EA855E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9552136-8D1C-46AF-BB4B-866B11A292F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9552136-8D1C-46AF-BB4B-866B11A292F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9552136-8D1C-46AF-BB4B-866B11A292F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9552136-8D1C-46AF-BB4B-866B11A292F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06297484-B9B4-4455-9892-2431DC1A2D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06297484-B9B4-4455-9892-2431DC1A2D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06297484-B9B4-4455-9892-2431DC1A2D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06297484-B9B4-4455-9892-2431DC1A2D75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
