@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Username", "Username\Username.csproj", "{53F4F58F-31F9-4D09-94F2-38E9E3BF954C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Password", "Password\Password.csproj", "{C738C3E8-F8A4-49AB-861A-50F36E8862D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53F4F58F-31F9-4D09-94F2-38E9E3BF954C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F4F58F-31F9-4D09-94F2-38E9E3BF954C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F4F58F-31F9-4D09-94F2-38E9E3BF954C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F4F58F-31F9-4D09-94F2-38E9E3BF954C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C738C3E8-F8A4-49AB-861A-50F36E8862D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C738C3E8-F8A4-49AB-861A-50F36E8862D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C738C3E8-F8A4-49AB-861A-50F36E8862D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C738C3E8-F8A4-49AB-861A-50F36E8862D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CFD7792-4A96-4537-9050-FE4C492DA956}
+	EndGlobalSection
+EndGlobal
