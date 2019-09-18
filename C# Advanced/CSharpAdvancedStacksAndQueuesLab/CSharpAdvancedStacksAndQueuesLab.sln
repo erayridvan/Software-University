@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseStrings", "ReverseStrings\ReverseStrings.csproj", "{C07ADD4B-5B5C-4826-ABC5-6EB3AE6B2044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackSum", "StackSum\StackSum.csproj", "{D7129290-14F4-47B5-BB0A-C48DC71C612E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C07ADD4B-5B5C-4826-ABC5-6EB3AE6B2044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07ADD4B-5B5C-4826-ABC5-6EB3AE6B2044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07ADD4B-5B5C-4826-ABC5-6EB3AE6B2044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07ADD4B-5B5C-4826-ABC5-6EB3AE6B2044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7129290-14F4-47B5-BB0A-C48DC71C612E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7129290-14F4-47B5-BB0A-C48DC71C612E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7129290-14F4-47B5-BB0A-C48DC71C612E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7129290-14F4-47B5-BB0A-C48DC71C612E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
