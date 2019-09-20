@@ -20,26 +20,38 @@ namespace MaximumAndMinimumElement
 
                 int type = args[0];
 
-                if (type==1)
+                if (type == 1)
                 {
                     int elementToPush = args[1];
                     numbers.Push(elementToPush);
                 }
-                else if (type==2)
+                else if (type == 2)
                 {
-                    numbers.Pop();
+                    if (numbers.Count != 0)
+                    {
+                        numbers.Pop();
+                    }
                 }
-                else if (type==3)
+                else if (type == 3)
                 {
-                    Console.WriteLine(numbers.Max());
+                    if (numbers.Count != 0)
+                    {
+                        Console.WriteLine(numbers.Max());
+                    }
                 }
-                else if (type==4)
+                else if (type == 4)
                 {
-                    Console.WriteLine(numbers.Min());
+                    if (numbers.Count != 0)
+                    {
+                        Console.WriteLine(numbers.Min());
+                    }
                 }
             }
 
-            Console.WriteLine(string.Join(", " , numbers));
+            if (numbers.Count != 0)
+            {
+                Console.WriteLine(string.Join(", ", numbers));
+            }
         }
     }
 }
