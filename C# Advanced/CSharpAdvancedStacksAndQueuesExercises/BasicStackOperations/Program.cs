@@ -12,7 +12,7 @@ namespace BasicStackOperations
                 .Split()
                 .Select(int.Parse)
                 .ToArray();
-
+            int elementsToPush = args[0];
             int elementsToPop = args[1];
             int elementContain = args[2];
 
@@ -21,7 +21,12 @@ namespace BasicStackOperations
                 .Select(int.Parse)
                 .ToArray();
 
-            Stack<int> nums = new Stack<int>(numbers);
+            Stack<int> nums = new Stack<int>();
+
+            for (int i = 0; i < elementsToPush; i++)
+            {
+                nums.Push(numbers[i]);
+            }
 
             for (int i = 0; i < elementsToPop; i++)
             {
@@ -31,17 +36,22 @@ namespace BasicStackOperations
                 }
             }
 
-            if (nums.Contains(elementContain))
+            bool contains = nums.Contains(elementContain);
+
+            if (contains)
             {
                 Console.WriteLine("true");
             }
-            else if (nums.Count>1 && !(nums.Contains(elementContain)))
+            else 
             {
-                Console.WriteLine(nums.Min());
-            }
-            else
-            {
-                Console.WriteLine("0");
+                if (nums.Count==0)
+                {
+                    Console.WriteLine(0);
+                }
+                else
+                {
+                    Console.WriteLine(nums.Min());
+                }
             }
         }
     }
