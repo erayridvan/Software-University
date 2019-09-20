@@ -1,49 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 
-namespace FastFood
+namespace Fast_Food
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int quantityOfFood = int.Parse(Console.ReadLine());
+            int foodQuantity = int.Parse(Console.ReadLine());
 
-            int[] quantityOfOrders = Console.ReadLine()
-                .Split()
-                .Select(int.Parse)
-                .ToArray();
+            int[] orders = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-            Queue<int> orders = new Queue<int>(quantityOfOrders);
-            int biggestOrder = orders.Max();
-            int index = orders.Count;
-            int totalOrders = 0;
+            var myQ = new Queue<int>(orders);
 
-            for (int i = 0; i < index; i++)
+            int sum = 0;
+
+            Console.WriteLine(myQ.Max());
+
+            while (myQ.Count > 0)
             {
-                int currentOrder = orders.Peek();
-                totalOrders += currentOrder;
+                int first = myQ.Peek();
 
-                if (totalOrders <= quantityOfFood)
+                sum += first;
+
+                if (sum <= foodQuantity)
                 {
-                    orders.Dequeue();
-                    continue;
+                    myQ.Dequeue();
                 }
                 else
                 {
-                    break;
+                    int[] arr = myQ.ToArray();
+                    Console.WriteLine("Orders left: " + string.Join(" ", arr));
+                    return;
                 }
             }
 
-            if (orders.Count == 0)
-            {
-                Console.WriteLine("Orders complete");
-            }
-            else
-            {
-                Console.WriteLine($"Orders left: {string.Join(", ", orders)}");
-            }
+            Console.WriteLine("Orders complete");
         }
     }
 }
