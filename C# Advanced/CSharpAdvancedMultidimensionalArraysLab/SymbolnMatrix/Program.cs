@@ -13,7 +13,6 @@ namespace SymbolnMatrix
             for (int row = 0; row < matrixSize; row++)
             {
                 var rowAsString = Console.ReadLine();
-                //var elements = rowAsString.Split(" ");
                 for (int col = 0; col < matrixSize; col++)
                 {
                     matrix[row, col] = rowAsString[col];
