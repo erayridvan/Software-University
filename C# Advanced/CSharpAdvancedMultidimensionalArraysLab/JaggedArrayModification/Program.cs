@@ -32,13 +32,13 @@ namespace JaggedArrayModification
 
                 if (row < 0 || row > jagged.Length - 1)
                 {
-                    Console.WriteLine("Invalid coordinate");
+                    Console.WriteLine("Invalid coordinates");
                     continue;
                 }
 
                 if (col < 0 || col > jagged[row].Length - 1)
                 {
-                    Console.WriteLine("Invalid coordinate");
+                    Console.WriteLine("Invalid coordinates");
                     continue;
                 }
 
@@ -52,13 +52,9 @@ namespace JaggedArrayModification
                 }
             }
 
-            for (int i = 0; i < jagged.Length; i++)
+            foreach (var array in jagged)
             {
-                for (int k = 0; k < jagged[i].Length; k++)
-                {
-                    Console.Write(jagged[i][k] + " ");
-                }
-                Console.WriteLine();
+                Console.WriteLine(string.Join(" ",array));
             }
         }
     }

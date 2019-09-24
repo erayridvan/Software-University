@@ -33,7 +33,7 @@ namespace PrintEvenNumbers
                 }
             }
 
-            Console.WriteLine(string.Join("," , evenNumbers));
+            Console.WriteLine(string.Join(", " , evenNumbers));
         }
     }
 }
