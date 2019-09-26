@@ -15,12 +15,18 @@ namespace SquaresInMatrix
             int rows = dimensions[0];
             int cols = dimensions[1];
 
+            if (rows<0 || cols<0)
+            {
+                Console.WriteLine(0);
+                return; 
+            }
+
             var matrix = new char[rows,cols];
 
             for (int row = 0; row < rows; row++)
             {
                 char[] letters = Console.ReadLine()
-                .Split(" ")
+                .Split(' ',StringSplitOptions.RemoveEmptyEntries)
                 .Select(char.Parse)
                 .ToArray();
 
