@@ -1,129 +1,138 @@
 ﻿using System;
-using System.Linq;
 
 namespace KnightGame
 {
-    class Program
+    public class KnightGame
     {
-        static void Main()
+        public static void Main()
         {
-            int dimentions = int.Parse(Console.ReadLine());
-
-            var gameBoard = new string[dimentions, dimentions];
-
-            InitializationGameBoard(gameBoard, dimentions);
-
-            int knightCounter = 0;
-            if (dimentions > 2)
+            int n = int.Parse(Console.ReadLine());
+            char[][] matrix = new char[n][];
+            for (int i = 0; i < matrix.Length; i++)
             {
-                Console.WriteLine(KnightRemoving(gameBoard, dimentions, knightCounter));
+                char[] inputRow = Console.ReadLine().ToCharArray();
+                matrix[i] = new char[n];
+                matrix[i] = inputRow;
             }
-            else
-            {
-                Console.WriteLine(knightCounter);
-            }
-        }
 
-        private static int KnightRemoving(string[,] gameBoard, int dimentions, int knightCounter)
-        {
-            for (int row = 0; row < dimentions; row++)
+            int currentKnightsInDanger = 0;
+            int maxKnightsInDanger = -1;
+            int mostDangerousKnightRow = 0;
+            int mostDangerousKnightCol = 0;
+            int count = 0;
+
+            while (true)
             {
-                for (int col = 0; col < dimentions; col++)
+                for (int rowIndex = 0; rowIndex < matrix.Length; rowIndex++)
                 {
-                    if (gameBoard[row, col] == "K")
+                    for (int colIndex = 0; colIndex < matrix[rowIndex].Length; colIndex++)
                     {
-                        if (col + 1 < gameBoard.GetLength(1) && row + 2 < gameBoard.GetLength(0))
+                        if (matrix[rowIndex][colIndex].Equals('K'))
                         {
-                            if (gameBoard[row + 2, col + 1] == "K")
+                            // vertical and left
+                            if (IsCellInMatrix(rowIndex - 2, colIndex - 1, matrix))
                             {
-                                gameBoard[row + 2, col + 1] = "0";
-                                knightCounter++;
+                                if (matrix[rowIndex - 2][colIndex - 1].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // vertical and right
+                            if (IsCellInMatrix(rowIndex - 2, colIndex + 1, matrix))
+                            {
+                                if (matrix[rowIndex - 2][colIndex + 1].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // vertical and left
+                            if (IsCellInMatrix(rowIndex + 2, colIndex - 1, matrix))
+                            {
+                                if (matrix[rowIndex + 2][colIndex - 1].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // vertical and right
+                            if (IsCellInMatrix(rowIndex + 2, colIndex + 1, matrix))
+                            {
+                                if (matrix[rowIndex + 2][colIndex + 1].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // horizontal up and left
+                            if (IsCellInMatrix(rowIndex - 1, colIndex - 2, matrix))
+                            {
+                                if (matrix[rowIndex - 1][colIndex - 2].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // horizontal up and right
+                            if (IsCellInMatrix(rowIndex - 1, colIndex + 2, matrix))
+                            {
+                                if (matrix[rowIndex - 1][colIndex + 2].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // horizontal down and left
+                            if (IsCellInMatrix(rowIndex + 1, colIndex - 2, matrix))
+                            {
+                                if (matrix[rowIndex + 1][colIndex - 2].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
+                            }
+
+                            // horizontal down and right
+                            if (IsCellInMatrix(rowIndex + 1, colIndex + 2, matrix))
+                            {
+                                if (matrix[rowIndex + 1][colIndex + 2].Equals('K'))
+                                {
+                                    currentKnightsInDanger++;
+                                }
                             }
                         }
 
-                        if (col + 2 < gameBoard.GetLength(1) && row + 1 < gameBoard.GetLength(0))
+                        if (currentKnightsInDanger > maxKnightsInDanger)
                         {
-                            if (gameBoard[row + 1, col + 2] == "K")
-                            {
-                                gameBoard[row + 1, col + 2] = "0";
-                                knightCounter++;
-                            }
+                            maxKnightsInDanger = currentKnightsInDanger;
+                            mostDangerousKnightRow = rowIndex;
+                            mostDangerousKnightCol = colIndex;
                         }
-
-                        if (col - 1 >= 0 && col - 1 < gameBoard.GetLength(1) && row + 2 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row + 2, col - 1] == "K")
-                            {
-                                gameBoard[row + 2, col - 1] = "0";
-                                knightCounter++;
-                            }
-                        }
-
-                        if (col - 2 >= 0 && col - 2 < gameBoard.GetLength(1) && row + 1 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row + 1, col - 2] == "K")
-                            {
-                                gameBoard[row + 1, col - 2] = "0";
-                                knightCounter++;
-                            }
-                        }
-
-
-
-                        if (col - 1 >= 0 && row - 2 >= 0 && col - 1 < gameBoard.GetLength(1) && row - 2 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row - 2, col - 1] == "K")
-                            {
-                                gameBoard[row - 2, col - 1] = "0";
-                                knightCounter++;
-                            }
-                        }
-
-                        if (row - 2 >= 0 && col + 1 < gameBoard.GetLength(1) && row - 2 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row - 2, col + 1] == "K")
-                            {
-                                gameBoard[row - 2, col + 1] = "0";
-                                knightCounter++;
-                            }
-                        }
-
-                        if (col - 2 >= 0 && row - 1 >= 0 && col - 2 < gameBoard.GetLength(1) && row - 1 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row - 1, col - 2] == "K")
-                            {
-                                gameBoard[row - 1, col - 2] = "0";
-                                knightCounter++;
-                            }
-                        }
-
-                        if (row - 1 >= 0 && col + 2 < gameBoard.GetLength(1) && row - 1 < gameBoard.GetLength(0))
-                        {
-                            if (gameBoard[row - 1, col + 2] == "K")
-                            {
-                                gameBoard[row - 1, col + 2] = "0";
-                                knightCounter++;
-                            }
-                        }
+                        currentKnightsInDanger = 0;
                     }
                 }
-            }
-
-            return knightCounter;
-        }
-
-        private static void InitializationGameBoard(string[,] gameBoard, int dimentions)
-        {
-            for (int row = 0; row < dimentions; row++)
-            {
-                string input = Console.ReadLine().Trim();
-                string[] arrSymbols = input.Split(' ',StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-                for (int col = 0; col < dimentions; col++)
+                if (maxKnightsInDanger != 0)
                 {
-                    gameBoard[row, col] = arrSymbols[col];
+                    matrix[mostDangerousKnightRow][mostDangerousKnightCol] = 'O';
+                    count++;
+                    maxKnightsInDanger = 0;
+                }
+                else
+                {
+                    Console.WriteLine(count);
+                    return;
                 }
             }
+        }
+
+        public static bool IsCellInMatrix(int row, int col, char[][] matrix)
+        {
+            if (0 <= row && row < matrix.Length && 0 <= col && col < matrix[row].Length)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
