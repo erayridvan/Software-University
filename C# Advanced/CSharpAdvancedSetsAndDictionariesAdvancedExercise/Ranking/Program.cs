@@ -18,7 +18,7 @@ namespace Ranking
                 string[] inputInfo = input.Split(":").ToArray();
 
                 string contest = inputInfo[0];
-                string password = inputInfo[0];
+                string password = inputInfo[1];
 
                 if (!contests.ContainsKey(contest))
                 {
@@ -65,6 +65,23 @@ namespace Ranking
                     students[student][contestName] = points;
                 }
                 input = Console.ReadLine();
+            }
+
+            var topCandidate = students
+                .OrderByDescending(x => x.Value.Sum(s => s.Value))
+                .FirstOrDefault();
+
+            Console.WriteLine($"Best candidate is {topCandidate.Key} with total {topCandidate.Value.Sum(x=>x.Value)} points.");
+            Console.WriteLine("Ranking:");
+
+            foreach (var (username, allContest) in students.OrderBy(x=>x.Key))
+            {
+                Console.WriteLine(username);
+
+                foreach (var (contestName, points) in allContest.OrderByDescending(x=>x.Value))
+                {
+                    Console.WriteLine($"#  {contestName} -> {points}");
+                }
             }
             ;
         }
