@@ -9,56 +9,33 @@ namespace FindEvensOrOdds
         static void Main()
         {
             int[] boundaries = Console.ReadLine()
-                .Split(" ")
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToArray();
+
+            List<int> numbers = new List<int>();
 
             int lowerBound = boundaries[0];
             int upperBound = boundaries[1];
 
-            string command = Console.ReadLine();
-
-            Predicate<int> odd = FindOdd;
-            Predicate<int> Even = FindEven;
-
-            List<int> numbers = new List<int>();
             for (int i = lowerBound; i <= upperBound; i++)
             {
-                if (command == "odd")
-                {
-                    if (odd(i))
-                    {
-                        numbers.Add(i);
-                    }
-                }
-                else if (command == "even")
-                {
-                    if (Even(i))
-                    {
-                        numbers.Add(i);
-                    }
-                }
+                numbers.Add(i);
             }
 
-            Console.WriteLine(string.Join(" ",numbers));
-        }
+            string command = Console.ReadLine();
 
-        private static bool FindOdd(int number)
-        {
-            if (number % 2 == 1)
+            Predicate<int> IsEvenPredicate = num => num % 2 == 0;
+
+            if (command == "odd")
             {
-                return true;
+                numbers.RemoveAll(IsEvenPredicate);
             }
-            return false;
-        }
-
-        private static bool FindEven(int number)
-        {
-            if (number%2==0)
+            else if (command=="even")
             {
-                return true;
+                numbers.RemoveAll(x=>!IsEvenPredicate(x));
             }
-            return false;
+            Console.WriteLine(string.Join(" ", numbers));
         }
     }
 }
