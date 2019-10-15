@@ -35,6 +35,7 @@ namespace FindEvensOrOdds
             {
                 numbers.RemoveAll(x=>!IsEvenPredicate(x));
             }
+
             Console.WriteLine(string.Join(" ", numbers));
         }
     }

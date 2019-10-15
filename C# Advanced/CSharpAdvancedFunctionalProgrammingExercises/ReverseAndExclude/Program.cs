@@ -11,6 +11,7 @@ namespace ReverseAndExclude
             Func<List<int>,int, List<int>> myFunc = (inputNumber, devider)=>
                  {
                      List<int> filterNumber = new List<int>();
+
                      foreach (var number in inputNumber)
                      {
                          if(number % devider != 0)
