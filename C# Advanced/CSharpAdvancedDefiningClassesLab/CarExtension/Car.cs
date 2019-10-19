@@ -1,57 +1,70 @@
 ﻿using System;
+using System.Text;
 
 namespace CarManufacturer
 {
-    class Car
+    public class Car
     {
-        private string make;
-        private string model;
-        private int year;
-        private double fuelQuantity;
         private double fuelConsumption;
-
-        public void Drive(double distance)
-        {
-            var consumption = (this.FuelQuantity - distance) * this.FuelConsumption;
-
-            if (consumption>0)
-            {
-                consumption -= this.FuelQuantity;
-            }
-            else
-            {
-               Console.WriteLine("Not enough fuel to perform this trip!");
-            }
-        }
+        private double fuelQuantity;
+        private int year;
+        private string model;
+        private string make;
 
         public double FuelConsumption
         {
-            get { return this.fuelConsumption; }
-            set { this.fuelConsumption = value; }
+            get { return fuelConsumption; }
+            set { fuelConsumption = value; }
         }
 
         public double FuelQuantity
         {
-            get { return this.fuelQuantity; }
-            set { this.fuelQuantity = value; }
-        }
-
-        public string Make
-        {
-            get { return this.make; }
-            set { this.make = value; }
-        }
-
-        public string Model
-        {
-            get { return this.model; }
-            set { this.model = value; }
+            get { return fuelQuantity; }
+            set { fuelQuantity = value; }
         }
 
         public int Year
         {
-            get { return this.year; }
-            set { this.year = value; }
+            get { return year; }
+            set { year = value; }
+        }
+
+        public string Make
+        {
+            get { return make; }
+            set { make = value; }
+        }
+
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+
+        public void Drive(double distance)
+        {
+            double expenceFuel = FuelConsumption * distance / 100;
+
+            if (expenceFuel > FuelQuantity)
+            {
+                Console.WriteLine("Not enough fuel to perform this trip!");
+            }
+            else
+            {
+                FuelQuantity -= distance / 100 * FuelConsumption;
+            }
+        }
+
+        public string WhoAmI()
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine($"Make: {this.Make}");
+            result.AppendLine($"Model: {this.Model}");
+            result.AppendLine($"Year: {this.Year}");
+            result.Append($"Fuel: {this.FuelQuantity:F2}L");
+
+            return result.ToString();
         }
     }
 }
