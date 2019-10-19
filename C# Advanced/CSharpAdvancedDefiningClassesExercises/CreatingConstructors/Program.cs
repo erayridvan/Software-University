@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CarManufacturer
+namespace DefiningClasses
 {
     public class StartUp
     {
