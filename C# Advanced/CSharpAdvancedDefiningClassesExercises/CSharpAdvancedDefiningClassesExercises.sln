@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldestFamilyMember", "Oldes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpinionPoll", "OpinionPoll\OpinionPoll.csproj", "{BC4535CC-CCC4-4905-8B0E-F86FE1B93109}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateModifier", "DateModifier\DateModifier.csproj", "{1F4BF086-EB0B-49F2-8801-305B31FAD18D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateModifier", "DateModifier\DateModifier.csproj", "{1F4BF086-EB0B-49F2-8801-305B31FAD18D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawData", "RawData\RawData.csproj", "{AED1EB76-7C66-4358-BBB8-DFDDF9082F7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "RawData\RawData.csproj", "{AED1EB76-7C66-4358-BBB8-DFDDF9082F7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{D04CF466-3847-494A-9E4E-201D98F5230E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{D04CF466-3847-494A-9E4E-201D98F5230E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{DB428EE5-B3A1-4313-8FF3-458794B5E122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{DB428EE5-B3A1-4313-8FF3-458794B5E122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTrainer", "PokemonTrainer\PokemonTrainer.csproj", "{2290B8E9-C1FB-4A73-B7D5-D647B48DEE59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{DB428EE5-B3A1-4313-8FF3-458794B5E122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB428EE5-B3A1-4313-8FF3-458794B5E122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB428EE5-B3A1-4313-8FF3-458794B5E122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2290B8E9-C1FB-4A73-B7D5-D647B48DEE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2290B8E9-C1FB-4A73-B7D5-D647B48DEE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2290B8E9-C1FB-4A73-B7D5-D647B48DEE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2290B8E9-C1FB-4A73-B7D5-D647B48DEE59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
